@@ -1,0 +1,18 @@
+create venv
+
+install reflex:
+py -m pip install reflex
+
+in the terminal:
+reflex init --> to init reflex into the repo
+
+reflex run --> to run the page, it will be located in http://localhost:3000/
+
+https://medium.com/@HeCanThink/reflex-a-library-to-build-performant-and-customizable-web-apps-in-pure-python-2bfde0344af2
+https://v2.chakra-ui.com/
+https://www.w3schools.com/
+https://web.dev/
+https://github.com/reflex-dev/reflex
+
+https://borodavko-bohdan.vercel.app/en
+
