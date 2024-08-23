@@ -8,36 +8,44 @@ import python_reflex_linkbio.styles.styles as styles
 from python_reflex_linkbio.styles.styles import Size as Size
 
 
-nba_data = pd.read_excel(
-    "C:/Users/jmoscoso04/Downloads/maestros.xlsx"
-)
-rx.data_table(
-    data=nba_data,
-    pagination=True,
-    search=True,
-    sort=True,
-)
+# nba_data = pd.read_excel(
+#     "C:/Users/jmoscoso04/Downloads/maestros.xlsx"
+# )
+# rx.data_table(
+#     data=nba_data,
+#     pagination=True,
+#     search=True,
+#     sort=True,
+# )
 class State(rx.State):
     pass
 
 def index() -> rx.Component:
     rx_box = rx.box( navbar(),
                 rx.center(
-                    rx.vstack(header(),  links(),  footer(), max_width =styles.MAX_WIDTH, width="700PX%", margin_y= Size.BIG.value)))
+                    rx.vstack(header(),  
+                              links(),  
+                              footer(), 
+                              max_width =styles.MAX_WIDTH, 
+                              width="700PX%", 
+                              margin_y= Size.BIG.value)))
     
-    rx_title = rx.text("Hello Reflex!", color_scheme = "yellow")
+    # rx_title = rx.text("Hello Reflex!", color_scheme = "yellow")
     
-    rx_table = rx.data_table(
-    data=nba_data,
-    pagination=True,
-    search=True,
-    sort=True,
-)
+    # rx_table = rx.data_table(
+    # data=nba_data,
+    # pagination=True,
+    # search=True,
+    # sort=True,
+# )
     return rx_box
         
 app = rx.App(
+    stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLES
+    
 )
-app.add_page(index)
-
-# 3:08
+app.add_page(index,
+             title="AlejoMD17 | Data Science, Machine Learning & AI",
+             description="Hola",
+             image="profile-pic-favicon.png")
